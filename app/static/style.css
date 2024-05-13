@@ -1,6 +1,16 @@
 h1{
-    color:rgb(124, 93, 71)
+    color:rgb(124, 93, 71);
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+p{
+    color:rgb(124, 93, 71);
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 body{
     background-color: bisque;
+}
+header{
+    font-family: "Lucida Console", "Courier New", monospace;
 }
