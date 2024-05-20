@@ -1,25 +1,28 @@
 {% extends "base.html.jinja" %}
+{% block title %} Ekstrakcja opinii {% endblock %}
 {% block content %}
-    <h2 class>Ekstrakcja opinii</h2>
-    <form action="" method="POST">
-        <form>
-        <div class="form-group">
-            <label for="product_id">Kod produktu</label>
-            <input type="text" name="product_id" id="exampleInputPassword1" placeholder="Podaj kod produktu">
+    <form action="{{url_for('extract')}}" method="POST" class="container">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="product_id" class="col-form-label">Kod produktu</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" name="product_id" id="product_id" class="form-control" aria-describedby="product_idHelpInline" placeholder="Podaj kod produktu" required>
+            </div>
+            <div class="col-auto">
+                <span id="product_idHelpInline" class="form-text">
+                Kod produktu musi zawierać 5-10 cyfr.
+                </span>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-warning">Pobierz opinie</button>
+            </div>
+
         </div>
-        <div class="form-check">
-            <span id="product_idHelpInline" class="form-text">
-            Kod produktu musi zawierać 8-10
-            </span>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-warning">Pobierz opinie</button>
-        </div>   
-        </form>
     </form>
-    {% if error is defned %}
+    {% if error is defined %}
         <div class="alert alert-warning alert-dismissible fade show mt-3 mb-3" role="alert">
-            <strong>Uwaga!</strong>  {{error}}
+            <strong>Uwaga!</strong> {{error}}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endif %}
